@@ -400,7 +400,7 @@ int Stack::find_value_return_index(int input)
                         }
                         temp=temp->get_Next();
                         counter++;
-                }
+                }//}
         }
 }
 int main()
@@ -593,10 +593,24 @@ int main()
                         }
 
                 }
-                if(counter1!=0||counter2!=0)//{{
+                if(counter1!=0)
                 {
-                        cout << "() and {} is not properly nested in your program\n";
+                        cout << "() is not properly nested\n";
+                        if(counter2!=0)
+                        {
+                                cout << "{} is not properly nested\n";
+                        }
+
                 }
+                else if(counter2!=0)
+                {
+                        cout << "{} is not properly nested\n";
+                }
+		if(counter1!=0||counter2!=0)
+		  {
+		    
+		    
+		    
                 else if(check==0)
                         cout << "() and {} is properly nested in your program\n";
                 read.close();
